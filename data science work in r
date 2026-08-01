@@ -1,0 +1,37 @@
+df <- read.csv("IRIS.csv")
+
+# Displaying first 5 rows 
+print("Displaying First 5 Rows: ")
+print(head(df, 5))
+
+print("Columns Names:")
+print(colnames(df))
+
+# Numbers of Rows and Columns
+print("Number of Rows")
+print(nrow(df))
+print("Numbers of Columns")
+print(ncol(df))
+
+# Summary Statistics
+print("Summary Statistics")
+print(summary(df))
+
+
+# New columns "Average score"
+
+df$Average_Score <- (df[, 1] + df[, 2] + df[, 3] + df[, 4])/4
+
+print(head(df, 10))
+
+
+# Applying condition
+
+df['Average_score_condition'] <- ifelse(
+  df['Average_Score'] > 2.5,
+  "More than 2.5",
+  "Less than or Equal to 2.5"
+)
+
+x <- head(df, 10) 
+print(x)
